@@ -1,0 +1,17 @@
+.container {
+  margin: 0 auto;
+  width: 1300px;
+  max-width: 100%;
+
+  @include laptop {
+    width: 1190px;
+  }
+
+  @include tablet-landscape {
+    width: 980px;
+  }
+
+  @include tablet-portrait {
+    width: 740px;
+  }
+}
