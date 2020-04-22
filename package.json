@@ -1,8 +1,8 @@
 {
   "name": "project",
   "version": "2.04.20",
-  "description": "project",
-  "author": "stovtoroj",
+  "description": "gulp project",
+  "author": "@stovtoroj(telegram)",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
