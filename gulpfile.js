@@ -7,6 +7,7 @@ const removeComments = require('gulp-strip-css-comments'); //удалет ком
 const rename = require("gulp-rename"); // добавляет *.min к файлам
 const sass = require("gulp-sass"); // компилятор SASS
 const cssnano = require("gulp-cssnano"); // сжимет CSS и удалет пробелы, и последние (;), делает весь CSS в одну строку
+const gcmq = require("gulp-group-css-media-queries"); // обьединяет медиа запросы
 const rigger = require("gulp-rigger"); // склеивает разные JS файлы в один
 const babel = require('gulp-babel'); // ES6 => ES5
 const uglify = require('gulp-uglify'); // Js minification
@@ -91,6 +92,7 @@ function css() {
             cascade: true
         }))
         .pipe(cssbeautify())
+        .pipe(gcmq())
         .pipe(dest(path.build.css))
         .pipe(cssnano({
             zindex: false,
