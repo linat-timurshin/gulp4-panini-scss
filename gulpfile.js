@@ -8,7 +8,8 @@ const rename = require("gulp-rename"); // добавляет *.min к файла
 const sass = require("gulp-sass"); // компилятор SASS
 const cssnano = require("gulp-cssnano"); // сжимет CSS и удалет пробелы, и последние (;), делает весь CSS в одну строку
 const rigger = require("gulp-rigger"); // склеивает разные JS файлы в один
-const uglify = require('gulp-uglify-es').default; // сжимает  JS файлы es6
+const babel = require('gulp-babel'); // ES6 => ES5
+const uglify = require('gulp-uglify'); // Js minification
 const plumber = require("gulp-plumber"); // при ошибке в JS не слетают Таски в Gulp
 const imagemin = require("gulp-imagemin"); // сжатие и оптимизация изображений
 const del = require("del"); // очищает папку Dist
@@ -110,6 +111,9 @@ function js() {
         .pipe(plumber())
         .pipe(rigger())
         .pipe(gulp.dest(path.build.js))
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(uglify())
         .pipe(rename({
             suffix: ".min",

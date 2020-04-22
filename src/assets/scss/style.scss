@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Roboto:400,500,700&display=swap&subset=cyrillic");
 
-
+@import "mixins/media";
 @import "utils/variables";
 @import "utils/reset";
-@import "mixins/media";
+
 
 // общие стили для всех страниц
 @import "layouts/section";
