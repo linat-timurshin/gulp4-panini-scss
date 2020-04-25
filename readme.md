@@ -335,3 +335,8 @@ P.S. У плагина [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio
 ### Шрифты:
 Основная папка:  **src/assets/fonts**   
 Просто закидываем нужные шрифты в эту папку и подключаем в **style.scss**.
+
+### Фидбек
+Вопросы, жалобы, дополнения(Pull Request) и предложения приветсвуются!
+ 
+Мой телеграм [@stovtoroj](http://telega.at/stovtoroj)
