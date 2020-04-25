@@ -246,7 +246,7 @@ P.S. У плагина [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio
   </svg>
 </div>
 ```
-и анимируем наш логотип при помощи CSS:
+и анимируем наш логотип при помощи SCSS:
 ```scss
 
 .logo {
@@ -329,8 +329,8 @@ P.S. У плагина [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio
     fill: #fff;
   }
 }
-
 ```
+[пример данной анимации тут](https://codepen.io/stovtoroj/pen/GRpmogd)
 
 ### Шрифты:
 Основная папка:  **src/assets/fonts**   
