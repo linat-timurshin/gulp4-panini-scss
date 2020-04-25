@@ -1,7 +1,7 @@
 #Gulp 4. Сборка проекта с Panini + SCSS
 ![alt tag](https://cs7055.userapi.com/c636720/v636720414/68fcf/3FKER3tGqmo.jpg)
 
-##Что включает в себя сборка?
+## Что включает в себя сборка?
 
 * [gulp-autoprefixer ](https://www.npmjs.com/package/gulp-autoprefixer) - автоматически расставляет вендорные префиксы в CSS в соответствии с сервисом [Can I Use](https://caniuse.com);
 * [gulp-cssbeautify](https://www.npmjs.com/package/gulp-cssbeautify) - делаем css красивым;
