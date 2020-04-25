@@ -28,36 +28,39 @@
 ## Начало работы
 * У вас должны быть установлены Node js и Gulp 
 * Устанавливаем пакеты из package.json: `npm i`;
-* Основная команда `gulp` запускает слежку за файлами `gulp-watch` и `browserSync`, собирает проект в папку `./dist`;
-* Команда `gulp clean` очищает папку `./dist`;
+* Основная команда `gulp` запускает слежку за файлами **gulp-watch** и **browserSync**, собирает проект в папку **/dist**;
+* Команда `gulp clean` очищает папку `/dist`;
 
 ## Как пользоватся?
-
 Работа ведется в папке: **src**; 
 ### HTML (panini):
-* **src/tpl/layouts/default.html** - основной шаблон проекта с подключенными стилями и скриптами. Если вам нужен другой шаблон, то добавляем его в эту же папку
+#### Шаблон
+ **src/tpl/layouts/default.html** - основной шаблон проекта с подключенными стилями и скриптами.  Если вам нужен другой шаблон, то добавляем его в эту же папку
 
-_Пример **default.html**:_
-```<!DOCTYPE html>
+Пример **default.html**:
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="./assets/css/style.min.css">
     ...
+    <title>{{ title }}</title>
 </head>
 <body>
-{{>header}}
-
-{{>body}} <!-- подключение всех страниц -->
-
-{{>footer}}
-<script src="assets/js/app.min.js"></script>
+    {{>header}} <!-- Подключаем header ко всем страницам -->
+    
+    {{>body}} <!-- подключение страниц -->
+    
+    {{>footer}} <!-- Подключаем footer ко всем страницам -->
+    <script src="assets/js/app.min.js"></script>
 </body>
 </html>
 ```
-* **src/tpl/** папка для всех страниц проекта. Главная страница index.html с подключенным шаблоном default.html
+**src/tpl/** папка для всех страниц проекта.  Главная страница **index.html** с подключенным шаблоном **default.html**  
+Сюда же добавляем все другие страницы (**blog.html**, **post.html** ... )
 
 _Пример **index.html**:_
-```
+```html
 ---
 layout: default <!-- Указываем название шаблона -->
 title: HomePage <!-- Указываем Title страницы -->
@@ -67,32 +70,40 @@ title: HomePage <!-- Указываем Title страницы -->
   <div class="container">
     <!-- подключаем необходимые части -->
     {{>sidebar}}
-    {{>content}}
+    {{>blog}
   </div>
 </section>
 ```
-* **src/tpl/partial/** директория контентой части проекта и повторяющихся блоков сайта (header, footer), подключаем в нужном месте шаблона  `{{>header}}`, `{{>footer}}` и т.д
+#### Partials(части)
 
-_Пример **{{>sidebar}}**:_
-```
+ **src/tpl/partial/** директория контентой части проекта и повторяющихся блоков сайта (header, footer), подключаем в нужном месте шаблона  `{{>header}}`, `{{>footer}}` и т.д  
+Например создадим паршел **sidebar.html** из примера выше
+
+Пример **{{>sidebar}}**:
+```html
 <div class="sidebar">
     ...
 </div>
 
 ```
-* в папке **partials** можно создавать подпапки для отдельных страниц, на подключение это не влияет
-Например создаем папку **../partials/blog/post.html** подключаем просто `{{>post}}` в нужном месте
+* в папке **partials** можно создавать подпапки для отдельных страниц, на подключение это не влияет  
+Например создаем папку blog и паршел post.html **partials/blog/post.html** подключаем просто `{{>post}}` в нужном месте
+* Так же можно подключать паршел в паршеле:
+```html
+<div class="blog">
+    {{>post}}
+</div>
+```
 
 * Больше информации о плагине **Panini** в [официальном репозитории](https://github.com/foundation/panini);
 
-P.S. с помощью Panini можно создавать повторяющиеся блоки и элементы, миксины, циклы и т.д. Но я еще до конца не раборался в нем
+P.S. с помощью Panini можно создавать повторяющиеся блоки и элементы, циклы и т.д. Но я еще до конца не раборался в нем
 
 ### SCSS:
 
 Основной файл **src/assets/scss/style.scss** все остальные стили импортируем в него
-```
+```scss
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Roboto:400,500,700&display=swap&subset=cyrillic");
-
 @import "mixins/media";
 @import "utils/variables";
 @import "utils/reset";
@@ -103,11 +114,10 @@ P.S. с помощью Panini можно создавать повторяющи
 
 Например Bootstrap:
 * Устанавливаем Bootstrap, пишем в консоли команду `npm install bootstrap --save` 
-* Подключаем необходимые блоки:
-```
+* Подключаем необходимые блоки в **style.scss**:
+```scss
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
-...
 ```
 
 ### JS:
@@ -117,13 +127,17 @@ P.S. с помощью Panini можно создавать повторяющи
 
 Например создадим папку **components** и добавим туда файл **slider.js**,
 Теперь подключаем его в файле **app.js**
-```
+```javascript
+document.addEventListener("DOMContentLoaded", () => {
+
   //= components/slider.js
+
+})
 ```
 
-Сторонние библиотеки так же как и SCSS импортируем в **app.js** из папки node_modules:
+Сторонние библиотеки так же как и SCSS импортируем в **app.js** из папки node_modules прописывая путь:
 
-```
+```javascript
 //= ../../../node_modules/bootstrap/js/dist/util.js
 //= ../../../node_modules/bootstrap/js/dist/modal.js
 ```
@@ -132,25 +146,24 @@ P.S. с помощью Panini можно создавать повторяющи
 Основная папка:  **src/assets/images** 
 Создаем любое количество папок как удобно и пользуемся как обычно)))
 
-Плагин [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin) не много сожмет и оптимизирует ихзображения.
-Если вам нужно добавить поддержку других форматов изображений, то идем в **gulpfile.js** и дописывем нужные форматы
-```
+Плагин [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin) не много сожмет и оптимизирует изображения.  
+Если вам нужно добавить поддержку других форматов изображений, то идем в **gulpfile.js** и дописываем нужные форматы
+```javascript
 let path = {
     src: {
-        ...
-        images: "src/assets/images/**/*.{jpg,jpeg,png,gif,ico,webmanifest,xml}",
+        images: "src/assets/images/**/*.{jpg,jpeg,png,gif}",
     },
     watch: {
-        ...
-        images: "src/assets/images/**/*.{jpg,jpeg,png,gif,ico,webmanifest,xml}",
+        images: "src/assets/images/**/*.{jpg,jpeg,png,gif}",
+    }
 }
 ```
-### SVG изображения:
+### SVG иконки:
 Основная папка:  **src/assets/images/svg** 
 
 Кидаем все svg-изображения в эту папку, на выходе получаем один минифицированный файл **sprite.svg**,
 подключаем на странице:
-```
+```html
 <svg class="icon-facebook">
    <use xlink:href="./assets/images/svg/sprite.svg#facebook"></use>
 </svg>
@@ -158,11 +171,17 @@ let path = {
 Где айдишник `#facebook` это изначальное название изображения, который мы скачали и закинули в **src/assets/images/svg**, поменяйте название иконки и поменяется айдишник;
 
 в SCSS создаем файл **icon.scss**, подключаем к **style.scss** и стилизуем выбранную иконку
-```
+```scss
 .icon-facebook {
     width: 2rem;
     height: 2rem;
     fill: #fff;
+    stroke: #000;
+    stroke-width: 2;
 }
 ```
 P.S. У плагина [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio) есть не большой минус, дело в том что он удалеяет все дефолтные стили изображений, если вам нужно сохранить стили для разноцветных иконок, то лучше подключить такую иконку инлайново на страницу предварительно создав паршел для этой иконки в папке **src/tpl/partials**.
+
+### Шрифты:
+Основная папка:  **src/assets/fonts**   
+Просто закидываем нужные шрифты в эту папку и подключаем в **style.scss**.
