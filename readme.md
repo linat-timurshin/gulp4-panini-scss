@@ -230,7 +230,7 @@ P.S. У плагина [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio
   </nav>
 </header>
 ```
-и сам паршел **logo.html** не путать со спрайтом
+и сам паршел **logo.html** (не путать со спрайтом)
 ```html
 <div class="header__logo">
   <svg class="logo"  viewBox="0 0 622 158" xmlns="http://www.w3.org/2000/svg">
@@ -245,6 +245,91 @@ P.S. У плагина [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio
     <path d="M608.05 23.272C605.554 23.272 603.442 22.408 601.714 20.68C600.082 18.952 599.266 16.84 599.266 14.344C599.266 11.848 600.082 9.73599 601.714 8.00799C603.442 6.27999 605.554 5.41599 608.05 5.41599C610.546 5.41599 612.61 6.27999 614.242 8.00799C615.97 9.73599 616.834 11.848 616.834 14.344C616.834 16.84 615.97 18.952 614.242 20.68C612.61 22.408 610.546 23.272 608.05 23.272ZM614.53 132.136C614.53 139.144 612.754 144.28 609.202 147.544C605.65 150.808 600.466 152.44 593.65 152.44H586.018V141.352H591.49C595.138 141.352 597.682 140.632 599.122 139.192C600.658 137.752 601.426 135.304 601.426 131.848V36.088H614.53V132.136Z"/>
   </svg>
 </div>
+```
+и анимируем наш логотип при помощи CSS:
+```scss
+
+.logo {
+  padding-left: 1rem;
+  width: 100%;
+  height: auto;
+  stroke-width: 4;
+  fill: transparent;
+  stroke: #fff;
+  position: relative;
+  z-index: 5;
+  animation: fill .5s ease forwards 3.5s;
+}
+
+.logo path:nth-child(1) {
+  stroke-dasharray: 418;
+  stroke-dashoffset: 418;
+  animation: line-animation 2s ease forwards .1s;
+}
+
+.logo path:nth-child(2) {
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  animation: line-animation 2s ease forwards .8s;
+}
+
+.logo path:nth-child(3) {
+  stroke-dasharray: 433;
+  stroke-dashoffset: 433;
+  animation: line-animation 2s ease forwards .6s;
+}
+
+.logo path:nth-child(4) {
+  stroke-dasharray: 355;
+  stroke-dashoffset: 355;
+  animation: line-animation 2s ease forwards .9s;
+}
+
+.logo path:nth-child(5) {
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  animation: line-animation 2s ease forwards 1.2s;
+}
+
+.logo path:nth-child(6) {
+  stroke-dasharray: 433;
+  stroke-dashoffset: 433;
+  animation: line-animation 2s ease forwards 1.5s;
+}
+
+.logo path:nth-child(7) {
+  stroke-dasharray: 246;
+  stroke-dashoffset: 246;
+  animation: line-animation 2s ease forwards 1.8s;
+}
+
+.logo path:nth-child(8) {
+  stroke-dasharray: 433;
+  stroke-dashoffset: 433;
+  animation: line-animation 2s ease forwards 2.1s;
+}
+
+.logo path:nth-child(9) {
+  stroke-dasharray: 334;
+  stroke-dashoffset: 334;
+  animation: line-animation 2s ease forwards 2.4s;
+}
+
+@keyframes line-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #fff;
+  }
+}
+
 ```
 
 ### Шрифты:
