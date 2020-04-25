@@ -149,6 +149,24 @@ p.s. `//=` это не комментарий, это rigger так подклю
 ### Изображения:
 Основная папка:  **src/assets/images** 
 Создаем любое количество папок как удобно и пользуемся как обычно)))
+```html
+    <img src="./assets/images/banner.jpg" alt="banner">
+
+    <img src="./assets/images/product/tomato.png" alt="product">
+```
+ или SCSS
+```scss
+   $product: apple, lemon, tomato, potatoes;
+ 
+   .image  {
+     padding: 1rem 0;
+     @each $product in $products {
+       &--#{$product} {
+         background: url('../images/products/#{$product}.png') center / cover;
+       }
+     }
+   }
+```
 
 Плагин [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin) не много сожмет и оптимизирует изображения.  
 Если вам нужно добавить поддержку других форматов изображений, то идем в **gulpfile.js** и дописываем нужные форматы
