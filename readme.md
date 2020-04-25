@@ -144,6 +144,21 @@ document.addEventListener("DOMContentLoaded", () => {
 //= ../../../node_modules/bootstrap/js/dist/util.js
 //= ../../../node_modules/bootstrap/js/dist/modal.js
 ```
+* если вам по каким либо причинам нужен jQuery в 2020+ году  
+Пишем в консоли:
+```
+npm install jQuery --save
+```
+идем в app.js, подключаем jQuery из node_modules и пользуемся как обычно, импортируем нужные компоненты:
+
+```javascript
+//= ../../../node_modules/jquery/dist/jquery.js
+$(function() {
+
+    //= components/slider.js
+
+})
+```
 p.s. `//=` это не комментарий, это rigger так подключает файлы)))
 
 ### Изображения:
