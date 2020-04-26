@@ -165,9 +165,9 @@ p.s. `//=` это не комментарий, это rigger так подклю
 Основная папка:  **src/assets/images** 
 Создаем любое количество папок как удобно и пользуемся как обычно)))
 ```html
-    <img src="./assets/images/banner.jpg" alt="banner">
+<img src="./assets/images/banner.jpg" alt="banner">
 
-    <img src="./assets/images/product/tomato.png" alt="product">
+<img src="./assets/images/product/tomato.png" alt="tomato">
 ```
  или SCSS
 ```scss
@@ -246,91 +246,6 @@ P.S. У плагина [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio
   </svg>
 </div>
 ```
-и анимируем наш логотип при помощи SCSS:
-```scss
-
-.logo {
-  padding-left: 1rem;
-  width: 100%;
-  height: auto;
-  stroke-width: 4;
-  fill: transparent;
-  stroke: #fff;
-  position: relative;
-  z-index: 5;
-  animation: fill .5s ease forwards 3.5s;
-}
-
-.logo path:nth-child(1) {
-  stroke-dasharray: 418;
-  stroke-dashoffset: 418;
-  animation: line-animation 2s ease forwards .1s;
-}
-
-.logo path:nth-child(2) {
-  stroke-dasharray: 314;
-  stroke-dashoffset: 314;
-  animation: line-animation 2s ease forwards .8s;
-}
-
-.logo path:nth-child(3) {
-  stroke-dasharray: 433;
-  stroke-dashoffset: 433;
-  animation: line-animation 2s ease forwards .6s;
-}
-
-.logo path:nth-child(4) {
-  stroke-dasharray: 355;
-  stroke-dashoffset: 355;
-  animation: line-animation 2s ease forwards .9s;
-}
-
-.logo path:nth-child(5) {
-  stroke-dasharray: 314;
-  stroke-dashoffset: 314;
-  animation: line-animation 2s ease forwards 1.2s;
-}
-
-.logo path:nth-child(6) {
-  stroke-dasharray: 433;
-  stroke-dashoffset: 433;
-  animation: line-animation 2s ease forwards 1.5s;
-}
-
-.logo path:nth-child(7) {
-  stroke-dasharray: 246;
-  stroke-dashoffset: 246;
-  animation: line-animation 2s ease forwards 1.8s;
-}
-
-.logo path:nth-child(8) {
-  stroke-dasharray: 433;
-  stroke-dashoffset: 433;
-  animation: line-animation 2s ease forwards 2.1s;
-}
-
-.logo path:nth-child(9) {
-  stroke-dasharray: 334;
-  stroke-dashoffset: 334;
-  animation: line-animation 2s ease forwards 2.4s;
-}
-
-@keyframes line-animation {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes fill {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: #fff;
-  }
-}
-```
-[пример данной анимации тут](https://codepen.io/stovtoroj/pen/GRpmogd)
 
 ### Шрифты:
 Основная папка:  **src/assets/fonts**   
