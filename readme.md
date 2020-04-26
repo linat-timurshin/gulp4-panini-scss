@@ -250,6 +250,6 @@ P.S. У плагина [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio
 Просто закидываем нужные шрифты в эту папку и подключаем в **style.scss**.
 
 ### Фидбек
-Вопросы, жалобы, дополнения(Pull Request) и предложения приветсвуются!
+Вопросы, жалобы, дополнения и предложения приветсвуются!
  
-Мой телеграм [@stovtoroj](http://telega.at/stovtoroj)
+Телеграм [@stovtoroj](http://telega.at/stovtoroj)
