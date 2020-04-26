@@ -23,8 +23,6 @@
 * [gulp-svgmin](https://www.npmjs.com/package/gulp-svgmin) минификация SVG;
 * [browser-sync](https://www.npmjs.com/package/browser-sync) - локальный сервер с live reload;
        
-
-
 ## Начало работы
 * У вас должны быть установлены Node js и Gulp 
 * Устанавливаем пакеты из package.json: `npm i`;
