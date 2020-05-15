@@ -35,7 +35,7 @@ let path = {
         html: "src/*.html",
         js: "src/assets/js/*.js",
         css: "src/assets/scss/style.scss",
-        images: "src/assets/images/**/*.{jpg,jpeg,png,gif,ico,webmanifest,xml}",
+        images: "src/assets/images/**/*.{jpg,jpeg,png,gif,ico,webp}",
         svg: "src/assets/images/svg/*.svg",
         fonts: "src/assets/fonts/**/*.*"
     },
@@ -43,7 +43,7 @@ let path = {
         html: "src/**/*.html",
         js: "src/assets/js/**/*.js",
         css: "src/assets/scss/**/*.scss",
-        images: "src/assets/images/**/*.{jpg,jpeg,png,gif,ico,webmanifest,xml}",
+        images: "src/assets/images/**/*.{jpg,jpeg,png,gif,ico,webp}",
         svg: "src/assets/images/svg/*.svg",
         fonts: "src/assets/fonts/**/*.*"
     },
