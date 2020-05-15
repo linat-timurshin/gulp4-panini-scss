@@ -30,7 +30,6 @@
     "panini": "^1.6.2"
   },
   "dependencies": {
-    "flickity": "^2.2.1",
-    "normalize-scss": "^7.0.1"
+    "flickity": "^2.2.1"
   }
 }
