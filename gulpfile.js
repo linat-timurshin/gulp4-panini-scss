@@ -21,7 +21,8 @@ const cheerio = require("gulp-cheerio"); // удаляет стили из SVG
 const svgSprite = require("gulp-svg-sprite"); // собирает все SVG в один файл
 const svgmin = require('gulp-svgmin'); // минификация SVG
 
-/* Paths */
+// Paths
+
 let path = {
     build: {
         html: "dist/",
@@ -50,7 +51,8 @@ let path = {
     clean: "./dist"
 };
 
-/* Tasks */
+// Tasks 
+
 function browserSync(done) {
     browsersync.init({
         server: {
