@@ -252,5 +252,7 @@ P.S. У плагина [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio
 
 ### Фидбек
 Вопросы, жалобы, дополнения и предложения приветсвуются!
+
+#### UPD: 29 07 2020 Все плагины обновлены до последней версии
  
 Телеграм [@stovtoroj](http://telega.at/stovtoroj)
