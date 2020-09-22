@@ -1,16 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Roboto:400,500,700&display=swap&subset=cyrillic");
 
-@import "mixins/media";
-@import "utils/variables";
-@import "utils/reset";
+// helpers
+
+@import "helpers/media";
+@import "helpers/font-size";
+@import "helpers/variables";
+@import "helpers/reset";
 
 
-// общие стили для всех страниц
+/* общие стили для всех страниц */
+
 @import "layouts/section";
 @import "layouts/container";
 @import "layouts/links";
 @import "layouts/icons";
 @import "layouts/header";
 @import "layouts/nav";
+@import "layouts/buttons";
+@import "layouts/text";
+
+/* стили отдельных блоков */
+
+@import "components/intro";
 
 

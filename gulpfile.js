@@ -20,6 +20,7 @@ const replace = require("gulp-replace"); // меняет '&gt;', '>' в SVG
 const cheerio = require("gulp-cheerio"); // удаляет стили из SVG
 const svgSprite = require("gulp-svg-sprite"); // собирает все SVG в один файл
 const svgmin = require('gulp-svgmin'); // минификация SVG
+const sourcemaps = require('gulp-sourcemaps');
 
 // Paths
 
@@ -87,6 +88,7 @@ function css() {
     return src(path.src.css, {
         base: "src/assets/scss/"
     })
+        .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer({
@@ -95,6 +97,7 @@ function css() {
         }))
         .pipe(cssbeautify())
         .pipe(gcmq())
+        .pipe(sourcemaps.write('.'))
         .pipe(dest(path.build.css))
         .pipe(cssnano({
             zindex: false,

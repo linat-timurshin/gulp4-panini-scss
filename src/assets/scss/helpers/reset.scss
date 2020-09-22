@@ -6,6 +6,7 @@
 
 html {
   font-size: 16px;
+
   @include large-screen {
     font-size: 18px;
   }
@@ -17,7 +18,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  
+
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   font-family: $primary-font;
